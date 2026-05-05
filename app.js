@@ -13,9 +13,12 @@
 // npm init (step by step, press enter to skip)
 // npm init -y (everything default)
 
-// const _ = require('lodash');
+const http = require('http')
 
-// const items = [1,[2, [3, [4]]]]
-// const newItems = _.flattenDeep(items);
-// console.log(newItems)
-// console.log('hello world')
+const server = http.createServer()
+
+server.on('request', (req, res) => {
+    res.end('welcome')
+})
+
+server.listen(5000)
